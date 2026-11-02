@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4 Friends – A Multiplayer Running Game</title>
+<meta name="description" content="4 Friends is a multiplayer running game for you and three friends. It is in development now.">
+<meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="4 Friends – A Multiplayer Running Game">
+<meta property="og:description" content="Four friends. One finish line. In development now.">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<nav class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="./"><img src="icon.svg" width="28" height="28" alt="">4 Friends</a>
+<p class="topbar-links">
+<a href="#together">The Game</a>
+<a href="support.html">Support</a>
+</p>
+</div>
+</nav>
+
+<header class="hero">
+<img class="hero-icon" src="icon.svg" width="96" height="96" alt="">
+<h1>Four friends.<br>One finish line.</h1>
+<p class="lede">A multiplayer running game for you and three friends. We’re building it right now.</p>
+<p class="cta"><span class="badge">In development</span></p>
+
+<div class="track" role="img" aria-label="Four runners, one per friend, racing in four lanes toward a finish line">
+<div class="lane"><span class="runner" style="--c: var(--p1); --t: 3.1s"></span></div>
+<div class="lane"><span class="runner" style="--c: var(--p2); --t: 3.4s"></span></div>
+<div class="lane"><span class="runner" style="--c: var(--p3); --t: 2.9s"></span></div>
+<div class="lane"><span class="runner" style="--c: var(--p4); --t: 3.6s"></span></div>
+</div>
+</header>
+
+<main>
+<section class="feature wide" id="together" aria-labelledby="together-title">
+<div class="copy reveal">
+<p class="eyebrow" style="--c: var(--p2)">Together</p>
+<h2 id="together-title">Made for four.</h2>
+<p>Grab three friends and run in the same match. Four players, four lanes, one race.</p>
+</div>
+<ul class="friends reveal">
+<li style="--c: var(--p1)"><h3>Friend 1</h3><p>Red lane</p></li>
+<li style="--c: var(--p2)"><h3>Friend 2</h3><p>Blue lane</p></li>
+<li style="--c: var(--p3)"><h3>Friend 3</h3><p>Green lane</p></li>
+<li style="--c: var(--p4)"><h3>Friend 4</h3><p>Yellow lane</p></li>
+</ul>
+</section>
+
+<section class="feature wide" aria-labelledby="follow-title">
+<div class="copy reveal">
+<p class="eyebrow" style="--c: var(--p3)">Follow along</p>
+<h2 id="follow-title">Built with<br>your feedback.</h2>
+<p>4 Friends is early. Found a bug in a test build, or have an idea for the game? Tell us on the <a href="support.html#send-feedback">support page</a>; no account needed.</p>
+</div>
+</section>
+
+<section class="closing reveal">
+<img src="icon.svg" width="80" height="80" alt="">
+<h2>4 Friends</h2>
+<p>A multiplayer running game.</p>
+<p class="cta"><span class="badge">In development</span></p>
+</section>
+</main>
+
+<footer>
+<p>© 2026 4 Friends</p>
+<p>
+<a href="support.html">Support</a>
+<a href="https://4-friends-multiplayer-running-game.github.io/4-friends-legal-docs/impressum.en.html">Legal Notice</a>
+<a href="https://4-friends-multiplayer-running-game.github.io/4-friends-legal-docs/datenschutzerklaerung.en.html">Privacy Policy</a>
+<a href="https://4-friends-multiplayer-running-game.github.io/4-friends-legal-docs/nutzungsbedingungen.en.html">Terms of Use</a>
+<a href="https://4-friends-multiplayer-running-game.github.io/4-friends-legal-docs/impressum.de.html" lang="de">Impressum</a>
+<a href="https://4-friends-multiplayer-running-game.github.io/4-friends-legal-docs/datenschutzerklaerung.de.html" lang="de">Datenschutz</a>
+</p>
+</footer>
+
+<script>
+// Fades each section in as it scrolls into view. Without JS everything is
+// simply visible; reduced motion is handled in the stylesheet.
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('shown');
+                observer.unobserve(entry.target);
+            }
+        }
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+} else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('shown'));
+}
+</script>
+</body>
+</html>
